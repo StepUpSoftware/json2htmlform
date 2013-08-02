@@ -1,1 +1,1 @@
-{"action":"index.html","method":"POST","html":[{"input":{"type":"password","name":"password","id":"password"}}],"enctype":"multipart/form-data"}
+{"action":"index.html","method":"POST","html":[],"enctype":"multipart/form-data"}
