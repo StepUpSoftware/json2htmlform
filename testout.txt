@@ -1,1 +1,1 @@
-{"input":{"type":"text","name":"wibble"}}
+{"action":"index.html","method":"POST","html":[{"input":{"type":"password","name":"password","id":"password"}}],"enctype":"multipart/form-data"}
