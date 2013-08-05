@@ -1,22 +1,55 @@
 {
-    "acton": "index.html",
-    "method": "POST",
-    "html": [
-        {
-            "input": {
-                "type": "text",
-                "name": "wibble",
-                "id": "wibble"
-            },"input": {
-                "type": "text",
-                "name": "wobble",
-                "id": "wobble"
-            },"input": {
-                "type": "password",
-                "name": "password",
-                "id": "password"
-            } 
-        }
-    ],
-    "enctype":"multipart/form-data"
+	"name": "my second new form",
+	"action": "index.html",
+	"method": "POST",
+	"html": [
+		{
+			"type": "text",
+			"name": "wibble",
+			"id": "wibble",
+			"tag": "input",
+			"placeholder": "wibble"
+		} , {
+			"type": "text",
+			"name": "wobble",
+			"id": "wobble",
+			"tag": "input",
+			"placeholder": "wobble"
+		}, {
+			"type": "checkbox",
+			"name": "bike",
+			"id": "bikecb",
+			"tag": "input",
+			"value": "bike",
+			"text": "Bike"
+		}, {
+			"type": "checkbox",
+			"name": "car",
+			"id": "carcb",
+			"tag": "input",
+			"value": "car",
+			"text": "Car"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "sec",
+			"tag": "input",
+			"value": "male",
+			"text": "Male"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "sec",
+			"tag": "input",
+			"value": "female",
+			"text": "Female"
+		}, {
+			"type": "password",
+			"name": "mypassword",
+			"id": "password",
+			"tag": "input",
+			"placeholder": "password"
+		}
+	],
+	"enctype": "multipart/form-data"
 }
