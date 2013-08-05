@@ -1,22 +1,23 @@
 {
-    "action": "index.html",
-    "method": "POST",
-    "html": [
-        {
-            "input": {
-                "type": "text",
-                "name": "wibble",
-                "id": "wibble"
-            },"input": {
-                "type": "text",
-                "name": "wobble",
-                "id": "wobble"
-            },"input": {
-                "type": "password",
-                "name": "password",
-                "id": "password"
-            } 
-        }
-    ],
-    "enctype":"multipart/form-data"
+	"action": "index.html",
+	"method": "POST",
+	"html": [
+		{
+			"type": "text",
+			"name": "wibble",
+			"id": "wibble",
+			"tag": "input"
+		} ,{
+			"type": "text",
+			"name": "wobble",
+			"id": "wobble",
+			"tag": "input"
+		}, {
+			"type": "password",
+			"name": "mypassword",
+			"id": "password",
+			"tag": "input"
+		}
+	],
+	"enctype": "multipart/form-data"
 }
