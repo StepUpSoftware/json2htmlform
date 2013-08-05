@@ -47,16 +47,15 @@
         if (!cmd.target) {
             throw new Error("target file not specified");
         }
+        
+        console.log(cmd);
 
         // Reading files
         fs.readFile(cmd.source, 'utf8', function(err, data) {
 
             try {
 
-                var valid, filename, outputfile;
-
-                //split filename and file extension
-                filename = cmd.source.split('.')
+                var valid, outputfile;
 
                 //use supplied target filename or derive it from source file name
                 outputfile = 'out/' +cmd.target;
