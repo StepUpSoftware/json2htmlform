@@ -1,0 +1,22 @@
+{
+    "action": "index.html",
+    "method": "POST",
+    "html": [
+        {
+            "input": {
+                "type": "text",
+                "name": "wibble",
+                "id": "wibble"
+            },"inut": {
+                "type": "text",
+                "name": "wobble",
+                "id": "wobble"
+            },"inut": {
+                "type": "password",
+                "name": "password",
+                "id": "password"
+            } 
+        }
+    ],
+    "enctype":"multipart/form-data"
+}

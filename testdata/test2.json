@@ -1,0 +1,22 @@
+{
+    "acton": "index.html",
+    "method": "POST",
+    "html": [
+        {
+            "input": {
+                "type": "text",
+                "name": "wibble",
+                "id": "wibble"
+            },"input": {
+                "type": "text",
+                "name": "wobble",
+                "id": "wobble"
+            },"input": {
+                "type": "password",
+                "name": "password",
+                "id": "password"
+            } 
+        }
+    ],
+    "enctype":"multipart/form-data"
+}

@@ -1,1 +1,0 @@
-{"action":"index.html","method":"POST","html":[],"enctype":"multipart/form-data"}

@@ -3,15 +3,15 @@
     "method": "POST",
     "html": [
         {
-            "input": {
+            "inut": {
                 "type": "text",
                 "name": "wibble",
                 "id": "wibble"
-            },"input": {
+            },"inut": {
                 "type": "text",
                 "name": "wobble",
                 "id": "wobble"
-            },"input": {
+            },"inut": {
                 "type": "password",
                 "name": "password",
                 "id": "password"
