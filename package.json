@@ -1,6 +1,6 @@
 {
   "name":         "json2htmlform",
-  "description":  "The Quick and Dirty Literate Programming Documentation Generator",
+  "description":  "Converts json documents to html5 forms",
   "keywords":     ["html5", "json", "form", "converter"],
   "author":       "Paul Ryan",
   "version":      "0.6.2",
@@ -13,11 +13,12 @@
   },
   "dependencies": {
     "commander":  ">= 0.5.2",
-    "underscore": ">= 1.0.0"
+    "underscore": ">= 1.0.0",
+    "handlebars": ">=1.0.12",
   },
-  "main" :        "./lib/main",
+  "main" :	"main",
   "bin": {
-    "json2htmlform":      "./bin/json2htmlform"
+    "json2htmlform":	"./bin/json2htmlform"
   },
   "repository" : {
   	"type" : "git",

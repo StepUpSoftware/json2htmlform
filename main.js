@@ -7,11 +7,11 @@
 
     // Required files
     fs = require('fs');
-    formatter = require('./formatter');
-    validator = require('./validator');
-    logger = require('./logger');
-    cmd = require('../node_modules/commander');
-    _ = require('../node_modules/underscore');
+    formatter = require('./lib/formatter');
+    validator = require('./lib/validator');
+    logger = require('./lib/logger');
+    cmd = require('./node_modules/commander');
+    _ = require('./node_modules/underscore');
 
     //try..catch exception handler
     var errorHandler = function(ex) {
@@ -43,6 +43,10 @@
         if (!cmd.source) {
             throw new Error("source file not specified");
         }
+        
+        if (!cmd.target) {
+            throw new Error("target file not specified");
+        }
 
         // Reading files
         fs.readFile(cmd.source, 'utf8', function(err, data) {
@@ -55,7 +59,7 @@
                 filename = cmd.source.split('.')
 
                 //use supplied target filename or derive it from source file name
-                outputfile = cmd.target || filename[0] + 'out.html';
+                outputfile = 'out/' +cmd.target;
                 
 
                 if (err) {
