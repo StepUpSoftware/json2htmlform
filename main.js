@@ -43,7 +43,7 @@
         if (!cmd.source) {
             throw new Error("source file not specified");
         }
-        
+
         if (!cmd.target) {
             throw new Error("target file not specified");
         }
@@ -56,8 +56,7 @@
                 var valid, outputfile;
 
                 //use supplied target filename or derive it from source file name
-                outputfile = 'out/' +cmd.target;
-                
+                outputfile = 'out/' + cmd.target;
 
                 if (err) {
                     throw new Error("Could not open file: " + cmd.source, err);
@@ -68,25 +67,11 @@
                 if (valid) {
 
                     // Calling json2htmlform function
-                    filedata = formatter.json2htmlform(data);
+                    filedata = formatter.json2htmlform(data, outputfile);
 
-                    if (filedata) {
+                    if (!filedata) {
 
-                        // Writing replaced text into a new file
-                        fs.writeFile(outputfile, filedata, function(err) {
-
-                            if (err) {
-
-                                throw new Error("Problem saving file: " + outputfile, err);
-
-                            }
-
-                            logger.log(outputfile + ' file saved');
-                        });
-
-                    } else {
-
-                        logger.log('unable to format source data');
+                        logger.log('unable to create html file');
 
                     }
 
