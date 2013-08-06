@@ -7,8 +7,8 @@ describe('validation should work as expected', function() {
     formatter = require('../lib/formatter');
     validator = require('../lib/validator');
     logger = require('../lib/logger');
-    cmd = require('../node_modules/commander');
-    _ = require('../node_modules/underscore');
+    cmd = require('commander');
+    _ = require('underscore');
 
     it('test.json should contain valid test data', function() {
 

@@ -7,9 +7,9 @@ describe('formatting should work as expected', function() {
     formatter = require('../lib/formatter');
     validator = require('../lib/validator');
     logger = require('../lib/logger');
-    cmd = require('../node_modules/commander');
-    _ = require('../node_modules/underscore');
-    handlebars = require('../node_modules/handlebars');
+    cmd = require('commander');
+    _ = require('underscore');
+    handlebars = require('handlebars');
 
     it('requires should be defined', function() {
 
