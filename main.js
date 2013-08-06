@@ -47,8 +47,6 @@
         if (!cmd.target) {
             throw new Error("target file not specified");
         }
-        
-        console.log(cmd);
 
         // Reading files
         fs.readFile(cmd.source, 'utf8', function(err, data) {
