@@ -10,21 +10,6 @@ describe('validation should work as expected', function() {
     cmd = require('../node_modules/commander');
     _ = require('../node_modules/underscore');
 
-    beforeEach(function() {
-
-    });
-
-    it('requires should be defined', function() {
-
-        expect(fs).toBeDefined();
-        expect(formatter).toBeDefined();
-        expect(validator).toBeDefined();
-        expect(logger).toBeDefined();
-        expect(cmd).toBeDefined();
-        expect(_).toBeDefined();
-
-    });
-
     it('test.json should contain valid test data', function() {
 
         data = template = fs.readFileSync('testdata/test.json', 'utf8');
