@@ -1,4 +1,4 @@
-var fs, formatter, filedata, cmd, validator, logger, data, valid, file, outfile, html;
+var fs, formatter, filedata, cmd, validator, logger, data, valid, file, outfile, html, children;
 
 // Required files
 fs = require('fs');
@@ -11,6 +11,8 @@ _ = require('underscore');
 
 var handler = new htmlparser.DefaultHandler(function(err, dom) {
 
+    var kids;
+
     if (err) {
 
         console.log('error with htmlparser');
@@ -19,28 +21,35 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
 
     }
 
-    html = _.flatten(dom);
+    var klass = htmlparser.DomUtils.getElements({
+        'class' : "form"
+    }, dom);
 
-    _.each(html, function(tag) {
-        _.each(tag, function(item) {
-            if (item === 'html') {
-                console.log(item.toString());
-            }
-        });
-    });
+    kids = klass.pop().children;
+    
+    children = [];
 
-    fs.writeFile(outfile, html, function(err) {
-
-        if (err) {
-
-            throw new Error("Problem saving file: " + outfile, err);
-
-        } else {
-
-            console.log('wrote ' + outfile);
+    _.each(kids, function(value, key) {
+        //strip out keys that we don't want
+        if (value['raw']) {
+            delete kids[key]['raw'];
         }
-
+        if (value['data']) {
+            delete kids[key]['data'];
+        }
+        if (value['type']) {
+            delete kids[key]['type'];
+        }
+        if (value['children']) {
+            delete kids[key]['children'];
+        }
+        //strips out empty objects
+        if (value['name']) {
+            children.push(value);
+        }
     });
+
+    kids = null;
 
 });
 
@@ -48,7 +57,7 @@ parser = new htmlparser.Parser(handler);
 
 describe('formatting should write an html file', function() {
 
-    //remove any output files;
+    //remove any test output files;
     beforeEach(function() {
         var path, files;
 
@@ -72,14 +81,14 @@ describe('formatting should write an html file', function() {
 
     it('test.json should be formattable as an html file', function() {
 
-        var test, valid, flag, body;
+        var test, valid, flag, body, itemCount, childrenCount;
 
         runs(function() {
 
             flag = false;
 
             data = fs.readFileSync('testdata/test.json', 'utf8');
-
+            
             valid = formatter.json2htmlform(data, file);
 
             //give it 500ms to save the file (async event)
@@ -95,13 +104,14 @@ describe('formatting should write an html file', function() {
         }, "the html file should be saved", 750);
 
         runs(function() {
+            
             test = fs.readFileSync(file, 'utf8');
             parser.parseComplete(test);
+            childrenCount = _.size(children);
             expect(valid).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(html).toBeTruthy();
-            expect(_.isArray(html)).toBeTruthy();
-            expect(_.isObject(html)).toBeTruthy();
+            expect(childrenCount).toEqual(12);
+
         });
 
     });
