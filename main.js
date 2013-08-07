@@ -10,8 +10,8 @@
     formatter = require('./lib/formatter');
     validator = require('./lib/validator');
     logger = require('./lib/logger');
-    cmd = require('./node_modules/commander');
-    _ = require('./node_modules/underscore');
+    cmd = require('commander');
+    _ = require('underscore');
 
     //try..catch exception handler
     var errorHandler = function(ex) {
