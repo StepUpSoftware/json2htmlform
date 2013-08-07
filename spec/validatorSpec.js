@@ -4,8 +4,7 @@ describe('validation should work as expected', function() {
 
     // Required files
     fs = require('fs');
-    formatter = require('../lib/formatter');
-    validator = require('../lib/validator');
+    jsontohtml = require('../lib/jsontohtml');
     logger = require('../lib/logger');
     cmd = require('commander');
     _ = require('underscore');
@@ -13,7 +12,7 @@ describe('validation should work as expected', function() {
     it('test.json should contain valid test data', function() {
 
         data = template = fs.readFileSync('testdata/test.json', 'utf8');
-        valid = validator.validate(data);
+        valid = jsontohtml.validate(data);
 
         expect(data).toBeDefined();
         expect(valid).toEqual(true);
@@ -22,7 +21,7 @@ describe('validation should work as expected', function() {
     it('test2.json should contain valid test data', function() {
 
         data = template = fs.readFileSync('testdata/test2.json', 'utf8');
-        valid = validator.validate(data);
+        valid = jsontohtml.validate(data);
 
         expect(data).toBeDefined();
         expect(valid).toEqual(true);
@@ -31,7 +30,7 @@ describe('validation should work as expected', function() {
     it('test3.json should contain invalid test data', function() {
 
         data = template = fs.readFileSync('testdata/test3.json', 'utf8');
-        invalid = validator.validate(data);
+        invalid = jsontohtml.validate(data);
 
         expect(data).toBeDefined();
         expect(invalid).toEqual(false);
@@ -40,7 +39,7 @@ describe('validation should work as expected', function() {
     it('test4.json should contain invalid test data', function() {
 
         data = template = fs.readFileSync('testdata/test4.json', 'utf8');
-        valid = validator.validate(data);
+        valid = jsontohtml.validate(data);
 
         expect(data).toBeDefined();
         expect(valid).toEqual(false);

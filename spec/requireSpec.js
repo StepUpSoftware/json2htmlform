@@ -4,8 +4,7 @@ describe('formatting should work as expected', function() {
 
     // Required files
     fs = require('fs');
-    formatter = require('../lib/formatter');
-    validator = require('../lib/validator');
+    jsontohtml = require('../lib/jsontohtml');
     logger = require('../lib/logger');
     cmd = require('commander');
     _ = require('underscore');
@@ -14,8 +13,7 @@ describe('formatting should work as expected', function() {
     it('requires should be defined', function() {
 
         expect(fs).toBeDefined();
-        expect(formatter).toBeDefined();
-        expect(validator).toBeDefined();
+        expect(jsontohtml).toBeDefined();
         expect(logger).toBeDefined();
         expect(cmd).toBeDefined();
         expect(_).toBeDefined();

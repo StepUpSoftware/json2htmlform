@@ -3,12 +3,11 @@
 (function() {
 
     // Declaring variables
-    var fs, formatter, filedata, cmd, validator, logger;
+    var fs, jsontohtml, filedata, cmd, logger;
 
     // Required files
     fs = require('fs');
-    formatter = require('./lib/formatter');
-    validator = require('./lib/validator');
+    jsontohtml = require('./lib/jsontohtml');
     logger = require('./lib/logger');
     cmd = require('commander');
     _ = require('underscore');
@@ -62,12 +61,12 @@
                     throw new Error("Could not open file: " + cmd.source, err);
 
                 }
-                valid = validator.validate(data);
+                valid = jsontohtml.validate(data);
 
                 if (valid) {
 
                     // Calling json2htmlform function
-                    filedata = formatter.json2htmlform(data, outputfile);
+                    filedata = jsontohtml.format(data, outputfile);
 
                     if (!filedata) {
 

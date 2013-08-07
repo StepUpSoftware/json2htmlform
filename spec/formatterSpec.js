@@ -2,7 +2,7 @@ var fs, formatter, filedata, cmd, validator, logger, data, valid, file, outfile,
 
 // Required files
 fs = require('fs');
-formatter = require('../lib/formatter');
+formatter = require('../lib/jsontohtml');
 file = 'out/test.html';
 outfile = 'out/test.json';
 
@@ -89,7 +89,7 @@ describe('formatting should write an html file', function() {
 
             data = fs.readFileSync('testdata/test.json', 'utf8');
             
-            valid = formatter.json2htmlform(data, file);
+            valid = jsontohtml.format(data, file);
 
             //give it 500ms to save the file (async event)
             setTimeout(function() {
