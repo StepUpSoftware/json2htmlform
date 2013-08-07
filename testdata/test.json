@@ -1,7 +1,7 @@
 {
 	"name": "My New Form",
 	"action": "index.html",
-	"method": "POST",
+	"method": "post",
 	"html": [
 		{
 			"type": "text",
@@ -21,28 +21,28 @@
 			"id": "bikecb",
 			"tag": "input",
 			"value": "bike",
-			"text": "Bike"
+			"label": "Bike"
 		}, {
 			"type": "checkbox",
 			"name": "car",
 			"id": "carcb",
 			"tag": "input",
 			"value": "car",
-			"text": "Car"
+			"label": "Car"
 		}, {
 			"type": "radio",
 			"name": "sex",
-			"id": "sec",
+			"id": "secm",
 			"tag": "input",
 			"value": "male",
-			"text": "Male"
+			"label": "Male"
 		}, {
 			"type": "radio",
 			"name": "sex",
-			"id": "sec",
+			"id": "secf",
 			"tag": "input",
 			"value": "female",
-			"text": "Female"
+			"label": "Female"
 		}, {
 			"type": "password",
 			"name": "mypassword",
