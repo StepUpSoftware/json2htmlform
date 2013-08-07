@@ -9,9 +9,9 @@ describe('validation should work as expected', function() {
     cmd = require('commander');
     _ = require('underscore');
 
-    it('test.json should contain valid test data', function() {
+    it('test5.json should contain valid test data', function() {
 
-        data = template = fs.readFileSync('testdata/test.json', 'utf8');
+        data = template = fs.readFileSync('testdata/test5.json', 'utf8');
         valid = jsontohtml.validate(data);
 
         expect(data).toBeDefined();
