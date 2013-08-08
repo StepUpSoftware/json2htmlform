@@ -49,7 +49,6 @@ Supported attributes;
 <li>placeholder</li>
 <li>value</li>
 <li>label</li>
-<li>text</li>
 </b>
 </ul>
 
