@@ -1,4 +1,4 @@
-//main.js
+#! /usr/bin/env node
 
 (function() {
 
@@ -10,7 +10,6 @@
     jsontohtml = require('./lib/jsontohtml');
     logger = require('./lib/logger');
     cmd = require('commander');
-    _ = require('underscore');
 
     //try..catch exception handler
     var errorHandler = function(ex) {
@@ -48,7 +47,7 @@
         // Reading files
         fs.readFile(cmd.source, 'utf8', function(err, data) {
 
-            var valid, outputfile;
+            var valid, target;
 
             try {
 
@@ -57,19 +56,18 @@
 
                 }
 
-                //use supplied target filename or derive it from source file name
-                outputfile = 'out/' + cmd.target;
+                target = 'out/' + cmd.target;
 
                 valid = jsontohtml.validate(data);
 
                 if (valid) {
 
                     // Calling json2htmlform function
-                    filedata = jsontohtml.write(data, outputfile);
+                    filedata = jsontohtml.write(data, target);
 
                     if (!filedata) {
 
-                        throw new Error('unable to create ' + outputfile);
+                        throw new Error('unable to create ' + target);
 
                     }
 
@@ -79,7 +77,7 @@
 
                 }
 
-                logger.info('saved ' + cmd.source + ' to ' + outputfile);
+                logger.info('saved ' + cmd.source + ' to ' + target);
 
             } catch (ex) {
 
