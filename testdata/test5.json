@@ -29,7 +29,7 @@
 			"tag": "input",
 			"value": "car",
 			"label": "Car",
-			"text": "wibble"
+			"txt": "wibble"
 		}, {
 			"type": "radio",
 			"name": "sex",
