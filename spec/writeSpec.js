@@ -144,7 +144,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(12);
+            expect(childrenCount).toEqual(13);
 
         });
 

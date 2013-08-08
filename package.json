@@ -26,6 +26,9 @@
 		"json2htmlform": "main.js"
 	},
 	"main": "main",
+	"scripts": {
+		"test": "jasmine-node spec"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:StepUpSoftware/json2htmlform.git"
