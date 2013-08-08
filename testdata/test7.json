@@ -1,0 +1,27 @@
+{
+	"name": "Button Form",
+	"action": "index.html",
+	"method": "post",
+	"html": [
+		{
+			"type": "button",
+			"name": "button",
+			"id": "buttonbutton",
+			"tag": "button",
+			"text": "button"
+		} , {
+			"type": "reset",
+			"name": "reset",
+			"id": "resetbutton",
+			"tag": "button",
+			"text": "reset"
+		}, {
+			"type": "submit",
+			"name": "submit",
+			"id": "submitbutton",
+			"tag": "button",
+			"text": "submit"
+		}
+	],
+	"enctype": "multipart/form-data"
+}
