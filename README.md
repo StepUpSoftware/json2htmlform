@@ -49,6 +49,7 @@ Supported attributes;
 <li>placeholder</li>
 <li>value</li>
 <li>label</li>
+<li>text</li>
 </b>
 </ul>
 
@@ -59,7 +60,8 @@ Examples;
 			"name": "wibble",
 			"id": "wibble",
 			"tag": "input",
-			"placeholder": "wibble"
+			"placeholder": "wibble",
+			 "label":"text box"
     }, {
 			"type": "checkbox",
 			"name": "bike",
@@ -197,7 +199,7 @@ to see a worked example.  The JSON used is reproduced below
 
     {
 	"name": "Example Form",
-	"action": "index.html",
+	"action": "example.html",
 	"method": "post",
 	"html": [
 		{
@@ -205,7 +207,8 @@ to see a worked example.  The JSON used is reproduced below
 			"name": "wibble",
 			"id": "wibble",
 			"tag": "input",
-			"placeholder": "wibble"
+			"placeholder": "wibble",
+			 "label":"text box"
 		} , {
 			"type": "text",
 			"name": "wobble",
