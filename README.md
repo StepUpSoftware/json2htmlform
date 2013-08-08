@@ -37,6 +37,8 @@ Only supported attributes can be used.  For all tags, you must define a tag attr
 
 <b>INPUT</b>
 
+If a label attribute is defined, a label tag will be prepended to the html above the tag.
+
 Supported attributes;
 <ul>
 <b>
@@ -78,7 +80,7 @@ Examples;
 
 optgroups and options attributes can not be combined in a single select.
 
-If a label attribute is defined, a label tag will be prepended to the html above the select tag.
+If a label attribute is defined, a label tag will be prepended to the html above the tag.
 
 
 Supported attributes;
