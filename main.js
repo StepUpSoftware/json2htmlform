@@ -38,7 +38,7 @@
 
         //process command line arguments
         cmd.parse(process.argv);
-        
+
         defaultError = "usage is node main.js --source [file] --target [file]";
 
         if (!cmd.source) {
@@ -72,11 +72,17 @@
 
                     if (!filedata) {
 
-                        logger.log('unable to create html file');
+                        throw new Error('unable to create ' + outputfile);
 
                     }
 
+                } else {
+
+                    throw new Error(cmd.source + ' could not be validated.  Check your tags and the README');
+
                 }
+
+                logger.info('saved ' + cmd.source + ' to ' + outputfile);
 
             } catch (ex) {
 
