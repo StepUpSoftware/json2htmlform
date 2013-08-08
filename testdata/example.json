@@ -1,0 +1,97 @@
+{
+	"name": "Example Form",
+	"action": "index.html",
+	"method": "post",
+	"html": [
+		{
+			"type": "text",
+			"name": "wibble",
+			"id": "wibble",
+			"tag": "input",
+			"placeholder": "wibble"
+		} , {
+			"type": "text",
+			"name": "wobble",
+			"id": "wobble",
+			"tag": "input",
+			"placeholder": "wobble"
+		}, {
+			"type": "checkbox",
+			"name": "bike",
+			"id": "bikecb",
+			"tag": "input",
+			"value": "bike",
+			"label": "Bike"
+		}, {
+			"type": "checkbox",
+			"name": "car",
+			"id": "carcb",
+			"tag": "input",
+			"value": "car",
+			"label": "Car"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "secm",
+			"tag": "input",
+			"value": "male",
+			"label": "Male"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "secf",
+			"tag": "input",
+			"value": "female",
+			"label": "Female"
+		}, {
+			"type": "password",
+			"name": "mypassword",
+			"id": "password",
+			"tag": "input",
+			"placeholder": "password"
+		}, {
+			"tag": "select",
+			"optgroups": [
+				{
+					"label": "Swedish Cars",
+					"options": ["volvo", "saab"]
+				}, {
+					"label": "German Cars",
+					"options": ["mercedes", "bmw", "audi"]
+				}
+			],
+			"label": "select a car by country",
+			"id": "selectcarbycountry"
+		}, {
+			"tag": "select",
+			"options": ["mercedes", "bmw", "audi", "volvo", "saab"],
+			"label": "select a car",
+			"id": "selectcar"
+		}, {
+			"name": "txtarea",
+			"id": "mytextarea",
+			"tag": "textarea",
+			"placeholder": "wibble",
+			"label": "this is a text area"
+		}, {
+			"type": "button",
+			"name": "button",
+			"id": "buttonbutton",
+			"tag": "button",
+			"text": "button"
+		} , {
+			"type": "reset",
+			"name": "reset",
+			"id": "resetbutton",
+			"tag": "button",
+			"text": "reset"
+		}, {
+			"type": "submit",
+			"name": "submit",
+			"id": "submitbutton",
+			"tag": "button",
+			"text": "submit"
+		}
+	],
+	"enctype": "multipart/form-data"
+}

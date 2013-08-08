@@ -5,7 +5,7 @@
 	"html": [
 		{
 			"name": "txtarea",
-			"id": "wibbletxt",
+			"id": "mytextarea",
 			"tag": "textarea",
 			"placeholder": "wibble",
 			"label": "this is a text area"
