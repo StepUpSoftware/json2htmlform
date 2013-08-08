@@ -89,7 +89,7 @@ describe('formatting should write an html file', function() {
 
             data = fs.readFileSync('testdata/test.json', 'utf8');
             
-            valid = jsontohtml.format(data, file);
+            valid = jsontohtml.write(data, file);
 
             //give it 500ms to save the file (async event)
             setTimeout(function() {

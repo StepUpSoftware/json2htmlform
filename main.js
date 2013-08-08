@@ -66,7 +66,7 @@
                 if (valid) {
 
                     // Calling json2htmlform function
-                    filedata = jsontohtml.format(data, outputfile);
+                    filedata = jsontohtml.write(data, outputfile);
 
                     if (!filedata) {
 
