@@ -1,0 +1,15 @@
+{
+	"name": "My New Form",
+	"action": "index.html",
+	"method": "post",
+	"html": [
+		{
+			"name": "txtarea",
+			"id": "wibbletxt",
+			"tag": "textarea",
+			"placeholder": "wibble",
+			"label": "this is a text area"
+		}
+	],
+	"enctype": "multipart/form-data"
+}

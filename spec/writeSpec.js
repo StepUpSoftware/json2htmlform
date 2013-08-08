@@ -1,10 +1,8 @@
-var fs, formatter, filedata, cmd, validator, logger, data, valid, file, outfile, html, children;
+var fs, formatter, filedata, cmd, validator, logger, data, valid, html, children;
 
 // Required files
 fs = require('fs');
 formatter = require('../lib/jsontohtml');
-file = 'out/test.html';
-outfile = 'out/test.json';
 
 htmlparser = require('htmlparser');
 _ = require('underscore');
@@ -26,7 +24,7 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
     }, dom);
 
     kids = klass.pop().children;
-    
+
     children = [];
 
     _.each(kids, function(value, key) {
@@ -81,15 +79,15 @@ describe('formatting should write an html file', function() {
 
     it('test.json should be formattable as an html file', function() {
 
-        var test, valid, flag, body, itemCount, childrenCount;
+        var test, valid, write, flag, body, itemCount, childrenCount;
 
         runs(function() {
 
             flag = false;
 
             data = fs.readFileSync('testdata/test.json', 'utf8');
-            
-            valid = jsontohtml.write(data, file);
+            valid = jsontohtml.validate(data);
+            write = jsontohtml.write(data, 'out/test.html');
 
             //give it 500ms to save the file (async event)
             setTimeout(function() {
@@ -104,13 +102,52 @@ describe('formatting should write an html file', function() {
         }, "the html file should be saved", 750);
 
         runs(function() {
-            
-            test = fs.readFileSync(file, 'utf8');
+
+            test = fs.readFileSync('out/test.html', 'utf8');
             parser.parseComplete(test);
             childrenCount = _.size(children);
             expect(valid).toBeTruthy();
+            expect(write).toBeTruthy();
             expect(test).toBeTruthy();
             expect(childrenCount).toEqual(12);
+
+        });
+
+    });
+
+    it('test6.json should be formattable as an html file', function() {
+
+        var test, valid, flag, body, itemCount, childrenCount;
+
+        runs(function() {
+
+            flag = false;
+
+            data = fs.readFileSync('testdata/test6.json', 'utf8');
+            valid = jsontohtml.validate(data);
+            write = jsontohtml.write(data, 'out/test6.html');
+
+            //give it 500ms to save the file (async event)
+            setTimeout(function() {
+                flag = true;
+            }, 500);
+
+        });
+
+        //force waitsFor to wait for 750 ms
+        waitsFor(function() {
+            return flag;
+        }, "the html file should be saved", 750);
+
+        runs(function() {
+
+            test = fs.readFileSync('out/test6.html', 'utf8');
+            parser.parseComplete(test);
+            childrenCount = _.size(children);
+            expect(valid).toBeTruthy();
+            expect(write).toBeTruthy();
+            expect(test).toBeTruthy();
+            expect(childrenCount).toEqual(3);
 
         });
 
