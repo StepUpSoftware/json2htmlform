@@ -285,12 +285,6 @@ to see a worked example.  The JSON used is reproduced below
 			"id": "resetbutton",
 			"tag": "button",
 			"text": "reset"
-		}, {
-			"type": "submit",
-			"name": "submit",
-			"id": "submitbutton",
-			"tag": "button",
-			"text": "submit"
 		}
 	],
 	"enctype": "multipart/form-data"
