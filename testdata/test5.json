@@ -28,7 +28,8 @@
 			"id": "carcb",
 			"tag": "input",
 			"value": "car",
-			"label": "Car"
+			"label": "Car",
+			"text": "wibble"
 		}, {
 			"type": "radio",
 			"name": "sex",
