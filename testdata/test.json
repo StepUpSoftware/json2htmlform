@@ -8,7 +8,8 @@
 			"name": "wibble",
 			"id": "wibble",
 			"tag": "input",
-			"placeholder": "wibble"
+			"placeholder": "wibble",
+			"label": "text input"
 		} , {
 			"type": "text",
 			"name": "wobble",
