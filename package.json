@@ -4,6 +4,7 @@
 	"keywords": ["html5", "json", "form", "converter"],
 	"author": "Paul Ryan",
 	"version": "0.6.2",
+	"preferGlobal": "true",
 	"licenses": [
 		{
 			"type": "MIT",
@@ -11,7 +12,7 @@
 		}
 	],
 	"engines": {
-		"node": ">=0.2.0"
+		"node": ">=0.8.25"
 	},
 	"dependencies": {
 		"commander": ">= 0.5.2",
@@ -21,10 +22,10 @@
 		"jasmine-node": ">=1.11.0",
 		"Q": ">=0.9.6"
 	},
-	"main": "main",
 	"bin": {
-		"json2htmlform": "./bin/json2htmlform"
+		"json2htmlform": "main.js"
 	},
+	"main": "main",
 	"repository": {
 		"type": "git",
 		"url": "git@github.com:StepUpSoftware/json2htmlform.git"
