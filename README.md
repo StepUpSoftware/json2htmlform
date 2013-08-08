@@ -34,3 +34,11 @@ A string e.g. "multipart/form-data"
 ##tag definitions
 
 <b>input</b>
+
+    {
+			"type": "text",
+			"name": "wibble",
+			"id": "wibble",
+			"tag": "input",
+			"placeholder": "wibble"
+    }
