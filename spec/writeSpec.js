@@ -144,7 +144,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(11);
+            expect(childrenCount).toEqual(12);
 
         });
 
@@ -184,7 +184,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(4);
+            expect(childrenCount).toEqual(5);
 
         });
 
@@ -224,7 +224,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(2);
+            expect(childrenCount).toEqual(3);
 
         });
 
@@ -264,7 +264,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(3);
+            expect(childrenCount).toEqual(4);
 
         });
 
