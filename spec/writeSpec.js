@@ -53,6 +53,39 @@ var handler = new htmlparser.DefaultHandler(function(err, dom) {
 
 parser = new htmlparser.Parser(handler);
 
+describe('validation should work as expected', function() {
+
+    var filedata, data, valid, invalid, validator, test;
+
+    it('test2.json should contain valid test data', function() {
+
+        data = template = fs.readFileSync('testdata/test2.json', 'utf8');
+        valid = jsontohtml.validate(data);
+
+        expect(data).toBeDefined();
+        expect(valid).toEqual(true);
+    });
+
+    it('test3.json should contain valid test data', function() {
+
+        data = template = fs.readFileSync('testdata/test3.json', 'utf8');
+        valid = jsontohtml.validate(data);
+
+        expect(data).toBeDefined();
+        expect(valid).toEqual(true);
+    });
+
+    it('test5.json should contain invalid test data', function() {
+
+        data = template = fs.readFileSync('testdata/test5.json', 'utf8');
+        valid = jsontohtml.validate(data);
+
+        expect(data).toBeDefined();
+        expect(valid).toEqual(false);
+    });
+
+});
+
 describe('formatting should write an html file', function() {
 
     //remove any test output files;
@@ -115,7 +148,45 @@ describe('formatting should write an html file', function() {
 
     });
 
-    it('test6.json should be formattable as an html file', function() {
+    it('test4.json should be formattable as an html file', function() {
+
+        var test, valid, flag, body, itemCount, childrenCount;
+
+        runs(function() {
+
+            flag = false;
+
+            data = fs.readFileSync('testdata/test4.json', 'utf8');
+            valid = jsontohtml.validate(data);
+            write = jsontohtml.write(data, 'out/test4.html');
+
+            //give it 500ms to save the file (async event)
+            setTimeout(function() {
+                flag = true;
+            }, 500);
+
+        });
+
+        //force waitsFor to wait for 750 ms
+        waitsFor(function() {
+            return flag;
+        }, "the html file should be saved", 750);
+
+        runs(function() {
+
+            test = fs.readFileSync('out/test4.html', 'utf8');
+            parser.parseComplete(test);
+            childrenCount = _.size(children);
+            expect(valid).toBeTruthy();
+            expect(write).toBeTruthy();
+            expect(test).toBeTruthy();
+            expect(childrenCount).toEqual(5);
+
+        });
+
+    });
+
+    xit('test6.json should be formattable as an html file', function() {
 
         var test, valid, flag, body, itemCount, childrenCount;
 

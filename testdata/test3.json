@@ -1,22 +1,55 @@
 {
-    "action": "index.html",
-    "method": "POST",
-    "html": [
-        {
-            "inut": {
-                "type": "text",
-                "name": "wibble",
-                "id": "wibble"
-            },"inut": {
-                "type": "text",
-                "name": "wobble",
-                "id": "wobble"
-            },"inut": {
-                "type": "password",
-                "name": "password",
-                "id": "password"
-            } 
-        }
-    ],
-    "enctype":"multipart/form-data"
+	"name": "Select Form",
+	"action": "index.html",
+	"method": "POST",
+	"html": [
+		{
+			"type": "text",
+			"name": "wibble",
+			"id": "wibble",
+			"tag": "input",
+			"placeholder": "wibble"
+		} , {
+			"type": "text",
+			"name": "wobble",
+			"id": "wobble",
+			"tag": "input",
+			"placeholder": "wobble"
+		}, {
+			"type": "checkbox",
+			"name": "bike",
+			"id": "bikecb",
+			"tag": "input",
+			"value": "bike",
+			"label": "Bike"
+		}, {
+			"type": "checkbox",
+			"name": "car",
+			"id": "carcb",
+			"tag": "input",
+			"value": "car",
+			"label": "Car"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "secm",
+			"tag": "input",
+			"value": "male",
+			"label": "Male"
+		}, {
+			"type": "radio",
+			"name": "sex",
+			"id": "secf",
+			"tag": "input",
+			"value": "female",
+			"label": "Female"
+		}, {
+			"type": "password",
+			"name": "mypassword",
+			"id": "password",
+			"tag": "input",
+			"placeholder": "password"
+		}
+	],
+	"enctype": "multipart/form-data"
 }

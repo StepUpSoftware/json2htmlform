@@ -1,22 +1,27 @@
 {
-    "action": "index.html",
-    "method": "POST",
-    "html": [
-        {
-            "input": {
-                "type": "text",
-                "name": "wibble",
-                "id": "wibble"
-            },"inut": {
-                "type": "text",
-                "name": "wobble",
-                "id": "wobble"
-            },"inut": {
-                "type": "password",
-                "name": "password",
-                "id": "password"
-            } 
-        }
-    ],
-    "enctype":"multipart/form-data"
+	"name": "Select Form",
+	"action": "index.html",
+	"method": "post",
+	"html": [
+		{
+			"tag": "select",
+			"optgroups": [
+				{
+					"label": "Swedish Cars",
+					"options": ["volvo", "saab"]
+				}, {
+					"label": "German Cars",
+					"options": ["mercedes", "bmw", "audi"]
+				}
+			],
+			"label": "select a car by country",
+			"id": "selectcarbycountry"
+		}, {
+			"tag": "select",
+			"options": ["mercedes", "bmw", "audi", "volvo", "saab"],
+			"label": "select a car",
+			"id": "selectcar"
+		}
+	],
+	"enctype": "multipart/form-data"
 }
