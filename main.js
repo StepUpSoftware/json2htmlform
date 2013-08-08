@@ -41,28 +41,25 @@
 
         defaultError = "usage is node main.js --source [file] --target [file]";
 
-        if (!cmd.source) {
-            throw new Error(defaultError);
-        }
-
-        if (!cmd.target) {
+        if (!cmd.source || !cmd.target) {
             throw new Error(defaultError);
         }
 
         // Reading files
         fs.readFile(cmd.source, 'utf8', function(err, data) {
 
+            var valid, outputfile;
+
             try {
-
-                var valid, outputfile;
-
-                //use supplied target filename or derive it from source file name
-                outputfile = 'out/' + cmd.target;
 
                 if (err) {
                     throw new Error("Could not open file: " + cmd.source, err);
 
                 }
+
+                //use supplied target filename or derive it from source file name
+                outputfile = 'out/' + cmd.target;
+
                 valid = jsontohtml.validate(data);
 
                 if (valid) {
