@@ -152,7 +152,7 @@ Examples;
 			"text": "submit"
 		}
 		
-<b>textarea</b>
+<b>TEXTAREA</b>
 
 Supported attributes;
 
