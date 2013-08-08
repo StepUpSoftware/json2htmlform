@@ -3,7 +3,7 @@
 (function() {
 
     // Declaring variables
-    var fs, jsontohtml, filedata, cmd, logger;
+    var fs, jsontohtml, filedata, cmd, logger, defaultError;
 
     // Required files
     fs = require('fs');
@@ -19,11 +19,11 @@
 
         if (msg.indexOf("SyntaxError") !== -1) {
 
-            logger.log('source file does not look like JSON');
+            logger.error('source file does not look like JSON');
 
         } else {
 
-            logger.log("" + ex);
+            logger.error("" + ex);
 
         }
 
@@ -32,19 +32,21 @@
     };
 
     //commander object
-    cmd.version('0.6.2').option("-s, --source [file]", "source file to use").option("-t, --target [target]", "file to write to");
+    cmd.version('0.6.2').option("-s, --source [file]", "source file to use").option("-t, --target [target]", "file to write to (saved to out folder)");
 
     try {
 
         //process command line arguments
         cmd.parse(process.argv);
+        
+        defaultError = "usage is node main.js --source [file] --target [file]";
 
         if (!cmd.source) {
-            throw new Error("source file not specified");
+            throw new Error(defaultError);
         }
 
         if (!cmd.target) {
-            throw new Error("target file not specified");
+            throw new Error(defaultError);
         }
 
         // Reading files
