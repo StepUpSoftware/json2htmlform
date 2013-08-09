@@ -3,7 +3,7 @@
 	"description": "Converts json documents to html5 forms",
 	"keywords": ["html5", "json", "form", "converter"],
 	"author": "Paul Ryan",
-	"version": "0.6.2",
+	"version": "0.6.3",
 	"preferGlobal": "true",
 	"licenses": [
 		{
