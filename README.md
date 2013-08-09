@@ -49,6 +49,7 @@ Supported attributes;
 <li>placeholder</li>
 <li>value</li>
 <li>label</li>
+<li>class</li>
 </b>
 </ul>
 
@@ -92,6 +93,7 @@ Supported attributes;
 <li>options</li>
 <li>id</li>
 <li>label</li>
+<li>class</li>
 </b>
 </ul>
 
@@ -127,6 +129,7 @@ Supported attributes;
 <li>name</li>
 <li>id</li>
 <li>text</li>
+<li>class</li>
 </b>
 </ul>
 
@@ -163,6 +166,7 @@ Supported attributes;
 <li>name</li>
 <li>id</li>
 <li>label</li>
+<li>class</li>
 </b>
 </ul>
 
