@@ -11,12 +11,6 @@
 			"placeholder": "wibble",
 			"label": "text input"
 		} , {
-			"type": "text",
-			"name": "wobble",
-			"id": "wobble",
-			"tag": "input",
-			"placeholder": "wobble"
-		}, {
 			"type": "checkbox",
 			"name": "bike",
 			"id": "bikecb",

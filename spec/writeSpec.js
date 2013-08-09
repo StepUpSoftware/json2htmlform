@@ -144,7 +144,7 @@ describe('formatting should write an html file', function() {
             expect(valid).toBeTruthy();
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
-            expect(childrenCount).toEqual(13);
+            expect(childrenCount).toEqual(12);
 
         });
 
@@ -265,6 +265,46 @@ describe('formatting should write an html file', function() {
             expect(write).toBeTruthy();
             expect(test).toBeTruthy();
             expect(childrenCount).toEqual(4);
+
+        });
+
+    });
+
+    it('class is a valid field attribute', function() {
+
+        var test, valid, flag, body, itemCount, childrenCount;
+
+        runs(function() {
+
+            flag = false;
+
+            data = fs.readFileSync('testdata/test8.json', 'utf8');
+            valid = jsontohtml.validate(data);
+            if (valid) {
+                write = jsontohtml.write(data, 'out/test8.html');
+            }
+
+            //give it 500ms to save the file (async event)
+            setTimeout(function() {
+                flag = true;
+            }, 500);
+
+        });
+
+        //force waitsFor to wait for 750 ms
+        waitsFor(function() {
+            return flag;
+        }, "the html file should be saved", 750);
+
+        runs(function() {
+
+            test = fs.readFileSync('out/test8.html', 'utf8');
+            parser.parseComplete(test);
+            childrenCount = _.size(children);
+            expect(valid).toBeTruthy();
+            expect(write).toBeTruthy();
+            expect(test).toBeTruthy();
+            expect(childrenCount).toEqual(21);
 
         });
 
