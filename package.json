@@ -19,8 +19,7 @@
 		"underscore": ">= 1.0.0",
 		"handlebars": ">=1.0.12",
 		"htmlparser": ">=1.0.12",
-		"jasmine-node": ">=1.11.0",
-		"Q": ">=0.9.6"
+		"jasmine-node": ">=1.11.0"
 	},
 	"bin": {
 		"json2htmlform": "main.js"
